@@ -11,9 +11,18 @@ import UIKit
 extension UIView {
     @discardableResult
     func subviews(_ subviewsFunc: () -> [UIView]) -> UIView {
-        let subviews = subviewsFunc()
-        for subview in subviews {
+        for subview in subviewsFunc() {
             addSubview(subview)
+        }
+        return self
+    }
+}
+
+extension UIStackView {
+    @discardableResult
+    func arrangedSubviews(_ subviewsFunc: () -> [UIView]) -> UIView {
+        for subview in subviewsFunc() {
+            addArrangedSubview(subview)
         }
         return self
     }

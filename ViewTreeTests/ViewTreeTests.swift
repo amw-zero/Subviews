@@ -10,25 +10,24 @@ import XCTest
 @testable import ViewTree
 
 class ViewTreeTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testAddingOneSubview() {
+        let view = UIView()
+        let subview = UIView()
+        view.subviews {[
+            subview
+        ]}
+        XCTAssertEqual(view.subviews, [subview])
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testAddingNestedSubviews() {
+        let view = UIView()
+        let subview = UIView()
+        let nestedSubview = UIView()
+        view.subviews {[
+            subview.subviews {[
+                nestedSubview
+            ]}
+        ]}
+        XCTAssertEqual(view.subviews, [subview])
+        XCTAssertEqual(subview.subviews, [nestedSubview])
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

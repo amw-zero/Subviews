@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ViewTree.xcodeproj">
+      location = "self:/Users/Alex/workspace/swift/ViewTree/Subviews.xcodeproj">
    </FileRef>
 </Workspace>

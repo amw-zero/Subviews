@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import ViewTree
+@testable import Subviews
 
-class ViewTreeTests: XCTestCase {
+class SubviewsTests: XCTestCase {
     func testAddingOneSubview() {
         let view = UIView()
         let subview = UIView()
